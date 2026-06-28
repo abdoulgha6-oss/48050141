@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Complainte des mendiants arabes de la casbah — Ismaël Aït Djafer</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px}
+body{
+  background:#CBC5B5;
+  font-family:'EB Garamond',Georgia,serif;
+  color:#1C1810;
+  padding:32px 16px 72px;
+}
+
+/* ── SPREAD ── */
+.spread{
+  display:block;
+  max-width:720px;
+  margin:0 auto 0;
+}
+
+/* Individual pages */
+.pv,.pr{
+  display:block;
+  width:100%;
+  background:#F8F5EC;
+  min-height:auto;
+  padding:64px 72px 56px;
+  position:relative;
+  box-shadow:0 6px 28px rgba(0,0,0,0.18);
+  margin-bottom:28px;
+}
+.pv{border-right:none;border-bottom:none;}
+.pb{display:none;}
+.pf{display:block;width:100%;background:#F8F5EC;min-height:auto;padding:64px 72px 56px;position:relative;box-shadow:0 6px 28px rgba(0,0,0,0.18);margin-bottom:28px;}
+
+/* Page numbers */
+.pn{
+  position:absolute;bottom:24px;left:50%;transform:translateX(-50%);
+  font-size:0.72rem;letter-spacing:0.12em;color:rgba(28,24,16,0.45);
+}
+
+/* ── TEXT STYLES ── */
+
+/* Cover */
+.cov{display:flex;flex-direction:column;align-items:center;min-height:560px}
+.cov-author{font-size:1.05rem;margin:32px 0 28px;letter-spacing:0.01em}
+.cov-title{color:#7A1A1A;font-style:italic;font-weight:600;font-size:1.3rem;
+  line-height:1.35;text-align:center;margin-bottom:8px}
+.cov-suivide{font-size:0.78rem;text-align:center;color:rgba(28,24,16,0.5);margin-bottom:4px}
+.cov-cri{font-size:1.15rem;font-weight:600;text-align:center;color:#7A1A1A;margin-bottom:12px}
+.cov-pref{font-size:0.76rem;text-align:center;color:rgba(28,24,16,0.5);margin-bottom:28px}
+.cov-pub{font-size:0.78rem;text-align:center;line-height:1.8;color:rgba(28,24,16,0.5);margin-top:auto;padding-bottom:32px}
+
+/* Title page */
+.tp{display:flex;flex-direction:column;align-items:center;min-height:560px}
+.tp-author{font-size:1rem;margin:44px 0 24px;font-style:italic}
+.tp-title{font-style:italic;font-weight:500;font-size:1.1rem;line-height:1.5;text-align:center;margin-bottom:12px}
+.tp-suivide{font-size:0.76rem;text-align:center;color:rgba(28,24,16,0.5);margin-bottom:4px}
+.tp-cri{font-style:italic;font-size:1rem;text-align:center;font-weight:500;margin-bottom:16px}
+.tp-pref{font-size:0.76rem;text-align:center;color:rgba(28,24,16,0.5);margin-bottom:auto}
+.tp-kanji{font-size:1.9rem;display:block;text-align:center;margin:18px 0}
+.tp-pub{font-size:0.78rem;text-align:center;line-height:1.9;color:rgba(28,24,16,0.5);padding-bottom:44px}
+
+/* Half-title centre */
+.halftitle{
+  display:flex;align-items:center;justify-content:center;height:100%;
+  font-size:0.65rem;letter-spacing:0.22em;text-transform:uppercase;text-align:center;line-height:1.8;
+}
+
+/* Publisher list */
+.publist{font-size:0.75rem;line-height:1.85;margin-top:16px}
+.publist .lbl{font-size:0.64rem;letter-spacing:0.16em;text-transform:uppercase;
+  color:rgba(28,24,16,0.45);display:block;margin-bottom:10px}
+.publist .auth{font-weight:500}
+.publist .titl{font-style:italic;display:block;margin-bottom:10px}
+
+/* Prose (preface) */
+.prose{font-size:0.79rem;line-height:1.82;text-align:justify;hyphens:auto;color:#1C1810}
+.prose p{margin-bottom:0.8em;text-indent:1.6em}
+.prose .sig{text-align:right;font-style:normal;margin-top:12px;text-indent:0}
+.prose-head{font-size:0.79rem;font-style:italic;text-align:center;font-weight:500;margin-bottom:18px}
+
+/* Poem */
+.poem{font-size:0.84rem;line-height:1.95;color:#1C1810}
+.poem .st{margin-bottom:1.5em}       /* stanza */
+.poem .l{display:block}              /* line */
+/* indents — measured from left margin of page text area */
+.poem .i1{padding-left:2em}
+.poem .i2{padding-left:4em}
+.poem .i3{padding-left:6em}
+.poem .i4{padding-left:8em}
+.poem .ir{text-align:right}         /* right-aligned line */
+/* refrain (italic, slightly faded) */
+.poem .ref{font-style:italic;opacity:0.82}
+
+/* Typographic title (page 7 recto) — letterspaced caps */
+.typtitle{
+  font-size:0.92rem;
+  font-weight:500;
+  letter-spacing:0.32em;
+  line-height:1.65;
+  font-style:normal;
+  white-space:pre;
+  margin:80px auto 0;
+  width:fit-content;
+}
+
+/* Dedication */
+.dedic{
+  font-style:italic;font-size:0.88rem;
+  margin-top:auto;padding-bottom:80px;
+}
+
+/* Newspaper clipping */
+.news{
+  border:1px solid rgba(28,24,16,0.22);
+  padding:16px 20px;
+  font-size:0.75rem;
+  line-height:1.72;
+  margin:0.8em 0;
+}
+.news-h{font-weight:600;font-size:0.76rem;text-align:center;
+  text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px}
+.news p{margin-bottom:0.55em;font-style:italic}
+.news .ref{font-size:0.66rem;color:rgba(28,24,16,0.5);font-style:normal;margin-top:8px}
+
+/* Colophon */
+.coloph{font-style:italic;font-size:0.88rem;margin-top:2.5em;text-align:center}
+
+/* Footnote */
+.fn{font-size:0.68rem;color:rgba(28,24,16,0.5);font-style:italic;margin-top:1em}
+
+/* drawing placeholder (SVG hand sketch) */
+.drawing{
+  width:160px;height:150px;margin:20px auto;display:flex;
+  align-items:center;justify-content:center;border:1px solid rgba(28,24,16,0.2);
+  overflow:hidden;background:#F0EBE0;
+}
+
+@media(max-width:600px){
+  .pv,.pr,.pf{padding:40px 24px 40px}
+  body{padding:12px 8px 48px}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ PAGE 1: COVER ══════════════════════════════════════════ -->
+<div class="spread">
+<div class="pf">
+<div class="cov">
+  <p class="cov-author">Ismaël Aït Djafer</p>
+  <p class="cov-title">Complainte<br>des mendiants arabes de la casbah<br>et de la petite Yasmina<br>tuée par son père</p>
+  <p class="cov-suivide">suivie de</p>
+  <p class="cov-cri">Cri</p>
+  <p class="cov-pref">Préface Kateb Yacine</p>
+  <div class="drawing">
+    <svg viewBox="0 0 160 150" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#2A2018" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" opacity="0.82">
+      <ellipse cx="80" cy="75" rx="52" ry="65" fill="#1A140A" opacity="0.07"/>
+      <path d="M72 120 Q62 105 58 90 Q54 75 62 65 Q67 58 74 62 Q78 66 78 76"/>
+      <path d="M78 76 Q76 62 82 55 Q88 48 95 52 Q100 57 98 70"/>
+      <path d="M98 70 Q96 56 102 50 Q108 44 115 49 Q120 55 117 67"/>
+      <path d="M117 67 Q116 55 122 50 Q128 45 134 51 Q138 58 134 70"/>
+      <path d="M134 70 Q133 61 137 56 Q141 51 146 56 Q150 62 147 75 Q143 89 137 98"/>
+      <path d="M72 120 Q82 128 96 130 Q110 132 122 125 Q130 120 137 98"/>
+      <path d="M72 120 Q68 132 70 140 Q74 148 82 146" stroke-width="0.9"/>
+      <path d="M62 108 Q55 110 52 118 Q50 124 57 128" stroke-width="0.8" opacity="0.5"/>
+    </svg>
+  </div>
+  <p style="font-size:2rem;text-align:center;">中</p>
+  <p class="cov-pub">Novetlé<br>Massalia</p>
+</div>
+</div>
+</div>
+
+<!-- ══ SPREAD: pages 2–3 (publisher list + half-title) ══════ -->
+<div class="spread">
+<div class="pv">
+  <div class="publist">
+    <span class="lbl">Chez le même éditeur</span>
+    <span class="auth">Michel Butor / J. M. Le Sidaner</span>
+    <span class="titl">Le Voyageur à la roue</span>
+    <span class="auth">Ismaël Aït Djafer</span>
+    <span class="titl">Cri</span>
+    <span class="auth">Jean Cocteau / Darius Milhaud</span>
+    <span class="titl">Correspondance</span>
+    <span class="auth">Pierre Boulez</span>
+    <span class="titl">Entretien</span>
+  </div>
+  <div style="position:absolute;bottom:48px;left:56px;font-size:0.67rem;color:rgba(28,24,16,0.45);font-style:italic;line-height:1.7">
+    Couverture : Dessin de Ismaïl Aït Djafer<br>(Fragment).
+  </div>
+</div>
+<div class="pr" style="display:flex;align-items:center;justify-content:center">
+  <p class="halftitle">COMPLAINTE DES MENDIANTS ARABES DE LA CASBAH ET DE LA PETITE<br>YASMINA TUÉE PAR SON PÈRE <em style="text-transform:none;letter-spacing:0.06em">suivi de</em> CRI</p>
+</div>
+</div>
+
+<!-- ══ SPREAD: page 4 blank + TITLE PAGE ═══════════════════ -->
+<div class="spread">
+<div class="pb"></div>
+<div class="pr">
+<div class="tp">
+  <p class="tp-author">Ismaël Saït Djafer</p>
+  <p class="tp-title"><em>Complainte<br>des mendiants arabes de la casbah<br>et de la petite Yasmina<br>tuée par son père</em></p>
+  <p class="tp-suivide">suivi de</p>
+  <p class="tp-cri"><em>Cri</em></p>
+  <p class="tp-pref">Préface<br>de Kateb Yacine</p>
+  <span class="tp-kanji">中</span>
+  <p class="tp-pub">Novetlé<br>Massalia<br>1999</p>
+</div>
+</div>
+</div>
+
+<!-- ══ SPREAD: pages 4–5 (intro prose, two cols) ════════════ -->
+<div class="spread">
+<div class="pv" style="display:flex;flex-direction:column;justify-content:space-between">
+  <div style="display:flex;gap:32px;flex:1">
+    <!-- left narrow col: copyright bottom -->
+    <div style="flex:0 0 38%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12px">
+      <p style="font-size:0.67rem;font-style:italic;line-height:1.7;color:rgba(28,24,16,0.45)">
+        Publié avec le concours du Centre National du Livre<br>
+        © Novetlé-Massalia pour le texte<br>
+        isbn : 2-911407-03-2
+      </p>
+    </div>
+    <!-- right col: bio text -->
+    <div class="prose" style="flex:1">
+      <p>« C'est ainsi que naquit le couscous saharien de Wally et qu'il s'en alla à Paris, dans l'Île Saint-Louis, sur les bords de la Seine, poser sur les tables et régaler les palais de ses invités de sa saveur de paradis… » Dans son dernier écrit pour le journal <em>El Moudjahid</em> datant du 11 juin 1995, Ismaël Aït Djafer se plaît à se comparer à Saint-Exupéry et au Petit Prince qu'il dit avoir aussi rencontré. Simplement, le mouton est devenu agneau et pour l'accompagner quelques grains de sable ont suffi pour devenir couscous…</p>
+      <p>Ismaël Aït Djafer est né le 1er mars 1929 dans la Casbah d'Alger, la même année que celui qui deviendra vingt années plus tard son ami intime, Kateb Yacine. Son goût pour la poésie se décline très tôt, dès les années lycée. Parallèlement à ses études, il s'intéressera au journalisme — il écrira plusieurs articles pour divers journaux, articles surtout sportifs — et développera, d'autre part, ses qualités de caricaturiste.</p>
+      <p>À la fin des années 1940, il émigre à Paris où il rencontre quelques grands noms de la culture française (Jean-Paul Sartre, Simone de Beauvoir, Mouloudji, Brassens…) et noue amitié avec cet autre très grand écrivain et homme de théâtre, d'origine berbère, Kateb Yacine. Il a alors vingt ans, le « temps des grandes espérances ».</p>
+    </div>
+  </div>
+</div>
+<div class="pr">
+  <div style="display:flex;gap:28px">
+    <div class="prose" style="flex:1">
+      <p>La <em>Complainte des mendiants arabes de la casbah et de la petite Yasmina tuée par son père</em> est beaucoup plus qu'un poème. Il est complainte lancinante, déchirure viscérale, blessure profonde. Un fait divers traduit en fait tragique se nourrissant de mots poignants pour évoquer des maux sanglants.</p>
+      <p>Écrit au début des années 50 (Octobre 1951) et totalement ignoré dans les milieux littéraires et éditoriaux algériens, ce poème a été publié par Jean-Paul Sartre dans sa revue <em>Les Temps Modernes</em>, puis réédité en 1986 par Bouchène, avec une préface de Kateb Yacine. La première édition fut publiée à compte d'auteur et par souscription publique. Une complainte qui crie au désespoir, à la fureur et au déchirement, une complainte écrite comme « un long cri de douleur d'une telle violence qu'on y retrouve après coup l'imminence de l'orage », sentiment de Kateb Yacine.</p>
+      <p>À la libération du pays, Ismaël Aït Djafer retournera en Algérie, comme pour renouer des liens vitaux et viscéraux pour lui. Il obtiendra le poste de directeur du personnel de la société actuelle Sonelgaz, et de directeur des aéroports d'Algérie. Il s'exilera définitivement à Paris où il deviendra courtier d'assurance.</p>
+      <p>Il meurt le 1er mai 1996, emporté par une longue et cruelle maladie. Mais il laisse derrière lui un autre cri. Son <em>Cri</em>, lui aussi longtemps refoulé et oublié mais aujourd'hui extériorisé et dévoilé.</p>
+      <p>Un poème qui vous donne des frissons, qui vous torture immédiatement, qui vous envahi d'une effroyable et insupportable angoisse.</p>
+    </div>
+    <div class="prose" style="flex:1">
+      <p>Alors qu'il est mort, le poète, sa vie et son œuvre sont enfin réhabilitées aujourd'hui, son œuvre magistrale n'ayant rencontré que difficultés et refus — peut-être censure — dans son pays natal</p>
+      <p>Une certaine publication — encore inédite à ce jour — porte, de la plume humoristique, voire satirique de l'auteur, l'édition « Barberousse », édition inexistante, Barberousse étant simplement le nom de la prison où le poète a passé huit mois avant de connaître l'exil définitif à Paris.</p>
+      <p>Et de citer encore Kateb Yacine. <em>« Les martyrs ne sont pas seulement ceux qui sont morts pendant la guerre, sous les coups des ennemis. Il y a aussi les martyrs de l'art, les artistes créateurs toujours martyrisés d'un pays qui se cherche encore depuis des millénaires, perdu dans son histoire. Nous sommes plongés dans un grand silence, un silence orageux où vient se projeter, comme un pavé, ce cri, cette complainte. »</em></p>
+      <p class="sig">Nadia Idjouadienne</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ SPREAD: Kateb Yacine preface (pages 6–7) ═════════════ -->
+<div class="spread">
+<div class="pv">
+  <p class="prose-head">Les fruits de la colère</p>
+  <div class="prose" style="font-style:italic">
+    <p>À l'origine, un fait divers : le drame quotidien et devenu banal d'une fillette assassinée par son père. Il fallait être Aït Djafer pour en faire un poème. Et quel poème ! Un long cri de douleur, d'une telle violence qu'on y retrouve après coup l'imminence de l'orage, l'annonce de novembre.</p>
+    <p>Cette complainte, à elle seule, suffit à faire d'Aït Djafer un poète. Qui le sait ? Quelques lecteurs se souviennent que ce texte a paru à Paris, dans la revue de Jean-Paul Sartre : « Les Temps Modernes » puis chez P. J. Oswald, ou bien ceux, plus rares, qui ont eu entre les mains la première édition, aujourd'hui épuisée. Elle fut publiée à compte d'auteur et par souscription publique, quelques années avant la guerre. Aït Djafer et moi, nous sommes nés la même année, en 1929, année de crise mondiale, et nous nous sommes rencontrés à vingt ans, au temps des grandes espérances. Nous avons eu les mêmes amis, dont M'hamed Issinkhem. Aït Djafer dessinait, et j'aimais les caricatures qu'il me montrait de temps à autre, au petit bureau de tabac où il aidait son père, rue Patrice Lumumba, tout près du marché de la Lyre, à la Casbah, que le peuple appelle « el-jbel » la montagne.</p>
+  </div>
+</div>
+<div class="pr" style="display:flex;flex-direction:column">
+  <div class="prose" style="font-style:italic">
+    <p>Comme Mohamed Zinet, qui allait jouer le rôle de Lakhdar dans « Le cadavre encerclé », comme Hadj Omar qui composait une chanson sur les petits cireurs, Aït Djafer est un enfant de la Casbah d'Alger, qui était et qui est une « capitale de la douleur ».</p>
+    <p>Ce poème est aussi une page de notre histoire. Il nous replonge dans l'atmosphère où mûrissaient depuis longtemps, comme les fruits de la colère, les premiers coups de feu. Ce feu, c'est le secret de tous les sacrifices. Aït Djafer s'est sacrifié. Il a tué en lui le poète, et il vit en exil, pour comble de dérision, d'un job bureaucratique…</p>
+    <p>Les martyrs ne sont pas seulement ceux qui sont morts pendant la guerre, sous les coups des ennemis. Il y a aussi les martyrs de l'art, les artistes créateurs toujours martyrisés d'un pays qui se cherche depuis des millénaires, perdu dans son histoire. Nous sommes plongés dans un grand silence, un silence orageux où vient se projeter, comme un pavé, ce cri, cette complainte.</p>
+  </div>
+  <p style="text-align:right;font-size:0.82rem;margin-top:12px">Kateb Yacine</p>
+
+  <!-- Typographic title block (right side of page 7) -->
+  <div style="margin-top:36px;display:flex;justify-content:flex-end">
+    <div class="typtitle">C O M P L
+A I N T E
+D E S &nbsp; M E
+N D I A N T
+S &nbsp; A R A B
+E S &nbsp; D E &nbsp; L
+A &nbsp;&nbsp;&nbsp;&nbsp;C A S B
+A H &nbsp;&nbsp;&nbsp;E T
+D &nbsp; E &nbsp; L &nbsp; A
+P E T I T E
+Y A S M I
+N A &nbsp; T U E
+E &nbsp;&nbsp;&nbsp;P A R
+S O N &nbsp; P E
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R E</div>
+  </div>
+
+  <div class="dedic" style="margin-top:24px;padding-bottom:0">
+    <em>Dédiée à ceux qui n'ont jamais eu faim</em>
+  </div>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.12–13 (blank left + poem opening) ═════════ -->
+<div class="spread">
+<div class="pb"></div>
+<div class="pr">
+<div class="poem" style="margin-top:60px">
+  <div class="st">
+    <span class="l">Poème</span>
+    <span class="l i1">Préface</span>
+    <span class="l i2">Éclair</span>
+  </div>
+  <div class="st">
+    <span class="l ir">L'édition</span>
+    <span class="l ir">de ce</span>
+  </div>
+  <div class="st">
+    <span class="l">Poème</span>
+    <span class="l i1">Est le résultat d'une</span>
+    <span class="l i2">Mendicité</span>
+    <span class="l i2">Publique.</span>
+  </div>
+  <div class="st">
+    <span class="l ir">C'est le suc des</span>
+  </div>
+  <div class="st">
+    <span class="l">Herbes</span>
+    <span class="l i1">de la</span>
+    <span class="l i2">Misère</span>
+    <span class="l i3">Macérées dans une boîte de fer blanc ramassée dans la</span>
+    <span class="l ir">dans la</span>
+  </div>
+  <div class="st">
+    <span class="l">Rue…</span>
+  </div>
+</div>
+<span class="pn">— 13 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.14–15 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <!-- Left page: BUVEZ-LE / CE SUC on left; Foule etc on right -->
+  <!-- Per the original: left page has "BUVEZ-LE..." on left, "...CE SUC." further right -->
+  <div class="st" style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:120px">
+    <span>BUVEZ-LE…</span>
+    <span>…CE SUC.</span>
+  </div>
+</div>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Foule</span>
+  </div>
+  <div class="st">
+    <span class="l">Particuliers</span>
+  </div>
+  <div class="st">
+    <span class="l">Auditoire</span>
+  </div>
+  <div class="st">
+    <span class="l">Spectateurs</span>
+  </div>
+  <div class="st">
+    <span class="l">Badauds</span>
+  </div>
+  <div class="st">
+    <span class="l">Lecteurs</span>
+  </div>
+  <div class="st">
+    <span class="l">Je lève</span>
+    <span class="l">Mon verre plein de sang</span>
+    <span class="l">à</span>
+    <span class="l">La santé</span>
+    <span class="l">de ceux qui sont en bonne santé</span>
+  </div>
+  <div class="st">
+    <span class="l">Je le lève</span>
+    <span class="l">Et je le casse</span>
+    <span class="l">Rageusement sur le comptoir</span>
+    <span class="l">De ma colère</span>
+    <span class="l">Et</span>
+    <span class="l">J'en triture les tessons</span>
+    <span class="l">Rageusement…</span>
+    <span class="l">Entre mes doigts pleins de</span>
+    <span class="l">Sang…</span>
+  </div>
+</div>
+<span class="pn">— 15 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.16–17 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">La complainte.</span>
+    <span class="l">Voilà</span>
+    <span class="l">Il faut que je sois calme</span>
+    <span class="l">Et il faut aussi</span>
+    <span class="l">Que j'aie toute ma tête à moi</span>
+    <span class="l">Tout seul</span>
+    <span class="l">Et pour toute la</span>
+    <span class="l">Nuit…</span>
+    <span class="l i3">Viens, Charlemagne</span>
+    <span class="l i3">Je vais te dire un poème</span>
+  </div>
+  <div class="st">
+    <span class="l">Comme j'en disais hier encore</span>
+    <span class="l">Au Quartier…</span>
+  </div>
+  <div class="st">
+    <span class="l i4">Je disais…</span>
+    <span class="l i2">Mais il faut que je réfléchisse</span>
+    <span class="l">Que je sois froid</span>
+    <span class="l">Comme un cadavre</span>
+    <span class="l">Celui de la petite Yasmina.</span>
+  </div>
+  <div class="st">
+    <span class="l i4">Je disais.</span>
+  </div>
+  <div class="st">
+    <span class="l">J'ai faim et je m'en fiche</span>
+    <span class="l">J'ai sommeil et je m'en fiche</span>
+    <span class="l">J'ai froid et je m'en fiche</span>
+    <span class="l">Il y a des joies terribles</span>
+    <span class="l">À gratter du papier</span>
+    <span class="l">À deux heures du métro.</span>
+    <span class="l i2">Bar du matin</span>
+  </div>
+</div>
+<span class="pn">— 16 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Rue Dufour Paris</span>
+    <span class="l i2">6ème</span>
+    <span class="l i2">À 800 kilomètres, il y avait la mer à boire</span>
+    <span class="l i2">À boire et à manger le soir et le matin</span>
+    <span class="l i2">Un coq à l'âne rôti</span>
+    <span class="l i2">Avec mon copain Neptune</span>
+    <span class="l i2">Avec mon copain Gitan</span>
+    <span class="l i2">Avec mon copain Slim l'Américain</span>
+    <span class="l i2">Qui avait trois doigts coupés</span>
+    <span class="l i2">Avec mon copain Benny et ses yeux de Bozambo</span>
+    <span class="l i2">Avec ma copine Nelly qui mangeait tout le temps du</span>
+    <span class="l i2">sucre galvanisé pour les vitamines</span>
+    <span class="l i2">K.</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Mais tu sais,</span>
+    <span class="l i3">Charlemagne,</span>
+    <span class="l i3">Il y a des gens qui disent j'ai faim</span>
+    <span class="l">Et puis c'est tout.</span>
+    <span class="l i3">Il y a des gens qui disent j'ai froid</span>
+    <span class="l">Et puis c'est tout.</span>
+    <span class="l i3">Il y a des gens qui disent j'ai sommeil</span>
+    <span class="l">Et puis s'étendent sur le marbre</span>
+    <span class="l i2">Des dalles</span>
+    <span class="l i3">Des trottoirs</span>
+    <span class="l i3">Des rues</span>
+    <span class="l i4">Désertes…</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais le ventre plein, les enfants de Charlemagne</span>
+  </div>
+</div>
+<span class="pn">— 17 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.18–19 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Chantent une chanson.</span>
+    <span class="l">Une chanson qu'on apprend à l'école.</span>
+    <span class="l i3 ref">Au clair de la lune</span>
+    <span class="l i3 ref">Mon ami Pierrot.</span>
+    <span class="l i3 ref">Prête-moi ta plume</span>
+    <span class="l i3 ref">Pour écrire un mot.</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Les mains des pauvres</span>
+    <span class="l i1">À la Casbah</span>
+    <span class="l i1">Sont longues et maigres et tendues comme des racines</span>
+    <span class="l i1">De pommes de terre.</span>
+    <span class="l i1">La voix des pauvres</span>
+    <span class="l i1">Est grêle</span>
+    <span class="l i1">Et ils ont des yeux ronds</span>
+    <span class="l i1">Et ils ont une sale gueule.</span>
+    <span class="l i1">La gueule de Pépé le Moko quand il se la casse rue du</span>
+    <span class="l i1">Regard un jour de</span>
+    <span class="l i1">Pluie</span>
+    <span class="l i1">Au Musée Grévin.</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Une minute de silence…</span>
+  </div>
+  <div class="st">
+    <span class="l">Deux heures de minutes de silence</span>
+    <span class="l">À la mémoire des morts de faim</span>
+    <span class="l">À la mémoire des morts de froid</span>
+    <span class="l">À la mémoire des morts de sommeil</span>
+    <span class="l">À la mémoire des morts fauchés</span>
+  </div>
+</div>
+<span class="pn">— 18 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Et une minute papillon je t'en prie après vous, je vous</span>
+    <span class="l ir">en prie</span>
+  </div>
+  <div class="st">
+    <span class="l">À la mémoire aussi</span>
+    <span class="l">Des morts vivants, ni trop morts ni trop vivants</span>
+    <span class="l">Qui sont encore</span>
+    <span class="l">Vivants</span>
+    <span class="l">Faute de mieux.</span>
+  </div>
+  <div class="st">
+    <span class="l">Un Jour</span>
+    <span class="l">Dans les rues de ma Casbah</span>
+    <span class="l">Je me suis mis à compter les pauvres</span>
+    <span class="l">Les gueux dénombraient leur vermine</span>
+    <span class="l">Puces, poux, punaises emballage compris</span>
+    <span class="l">Il n'y a qu'un soleil pour tous</span>
+    <span class="l">Pour les Américains et pour les Cannibales.</span>
+    <span class="l">Mais les pauvres ne savaient pas</span>
+    <span class="l">Compter</span>
+    <span class="l">Et moi</span>
+    <span class="l">J'avais la flemme de le faire</span>
+  </div>
+  <div class="st">
+    <span class="l">Car</span>
+    <span class="l">Au fond, Charlemagne, je m'en fiche</span>
+    <span class="l">Moi</span>
+  </div>
+  <div class="st">
+    <span class="l">De tous les crétins, les miteux, les pouilleux, les</span>
+  </div>
+  <div class="st">
+    <span class="l">Dégueulasses, les infirmes, les crevettes, les malheureux</span>
+  </div>
+</div>
+<span class="pn">— 19 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.20–21 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l i1">Les ivrognes, les camemberts, les truands, les tordus,</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Les sourds-muets</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Et tous les autres, les gros et les maigres</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Du moment</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Que je ne peux plus acheter à la Petite Source</span>
+  </div>
+  <div class="st">
+    <span class="l i1">En chipant la salière et le pot de moutarde</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Mon cornet de frites</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Pour le manger</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Rue de l'Ancienne Comédie et puis Rue de Buci…</span>
+  </div>
+  <div class="st">
+    <span class="l i1">L'absurde complainte de mes frères</span>
+  </div>
+  <div class="st">
+    <span class="l i1">L'absurde appel aux cœurs généreux</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Seigneur, regardez-les</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Donnez-leur leur caviar quotidien.</span>
+  </div>
+  <div class="st">
+    <span class="l i1">N'oubliez pas aussi</span>
+  </div>
+</div>
+<span class="pn">— 20 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Leurs enfants</span>
+  </div>
+  <div class="st">
+    <span class="l">Ils ont besoin d'aller au cinéma.</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais le ventre plein les enfants de Charlemagne</span>
+    <span class="l i2">Chantent une chanson</span>
+    <span class="l i2">Une chanson qu'on apprend à l'école :</span>
+    <span class="l i3 ref">Il était un</span>
+    <span class="l i3 ref">Petit navire (bis)</span>
+    <span class="l i3 ref">Qui naviguait je ne sais plus comment</span>
+    <span class="l i3 ref">Ohé…</span>
+    <span class="l i3 ref">Ohé…</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais ils l'ont dit.</span>
+    <span class="l">Il faut des hommes forts pour une nation forte…</span>
+    <span class="l">Il ne faut pas courir après deux souris blanches…</span>
+    <span class="l">Il faut être un roseau pensant…</span>
+    <span class="l">Essuyez vos pieds avant d'entrer…</span>
+    <span class="l">Le chose est au fond du couloir</span>
+    <span class="l">À moi comte, de deux mots il faut choisir le moindre</span>
+    <span class="l">La naissance précède l'existence.</span>
+  </div>
+  <div class="st">
+    <span class="l">Ave Maria… morituri te saluant…</span>
+    <span class="l">Vogue la galère</span>
+  </div>
+  <div class="st">
+    <span class="l">Évidemment… Évidemment.</span>
+    <span class="l i3">ÉVIDEMMENT…</span>
+  </div>
+</div>
+<span class="pn">— 21 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.22–23 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">En 1944</span>
+    <span class="l">Charlemagne,</span>
+  </div>
+  <div class="st">
+    <span class="l">Mes vers embouchaient des trompettes victoriennes.</span>
+    <span class="l i2">Quand vous verrez un pauvre, affalé comme un</span>
+    <span class="l ir">mort,</span>
+    <span class="l i2">À la pitié du nombre, en vain montrer sa face</span>
+    <span class="l i2">Oh… Songez un instant à la terrible angoisse</span>
+    <span class="l i2">Des vivants emmurés dans les cachots du Sort.</span>
+    <span class="l">Les nuits sont fraîches au Canada…</span>
+    <span class="l i1">Mais comme c'est plus facile</span>
+    <span class="l i1">Plus vrai</span>
+    <span class="l i1">De dire avec mes mots de tous les jours</span>
+    <span class="l i1">Regarde</span>
+    <span class="l i1">Regarde cette procession de têtes de pipe sans vie avec</span>
+    <span class="l i1">Leurs bidons de soupe, leurs bâtons d'olivier et leurs</span>
+    <span class="l i1">Bâtons blancs</span>
+    <span class="l i1">De la société</span>
+    <span class="l i1">Protectrice des animaux domestiques</span>
+    <span class="l i1">Ou pas,</span>
+    <span class="l i1">Avec leurs boîtes de fer blanc, leurs chiffons, leurs</span>
+    <span class="l i1">Burnous pourris, leurs chéchias pourries, leurs yeux</span>
+    <span class="l i1">Pourris, leur démarche de macchabées, leurs pieds nus.</span>
+    <span class="l i1">Leurs salles à manger, leurs courants d'air, leurs haïks</span>
+    <span class="l i1">En portion de six comme la vache qui rit ou la vache</span>
+    <span class="l i1">Sérieuse, leurs enfants, leurs cordes à nœuds leurs</span>
+    <span class="l i1">Cheveux, leurs pinces à linge modèle breveté S.G.D.G.,</span>
+    <span class="l i1">C.Q.F.D., A.B.C.D., leur crâne rasé comme à</span>
+    <span class="l i1">Barberousse *, leur cou sale, les mots qu'ils marmonnent</span>
+  </div>
+  <div class="fn">* Prison civile d'Alger</div>
+</div>
+<span class="pn">— 22 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Les jours pluvieux,</span>
+    <span class="l">À bas l'hémistiche !</span>
+    <span class="l">L'hémistiche est mort ! Vive le Roi</span>
+    <span class="l">Au poteau !</span>
+    <span class="l">Au piqué avec un bonnet d'âne et une veste de velours</span>
+    <span class="l">Plus facile de dire</span>
+    <span class="l">Avec la tristesse serrant ma gorge</span>
+    <span class="l">À n'importe qui</span>
+    <span class="l">Au Président de l'Assemblée Algérienne</span>
+    <span class="l">À celui de l'estudiantina de Bab-el-Oued</span>
+    <span class="l">À celui du club du chien de défense et de berger</span>
+    <span class="l">Aux enfants de Marie</span>
+    <span class="l">À Zorro, l'homme au fouet et son cheval Médor :</span>
+    <span class="l">La charité pour mes frères qui ont faim</span>
+  </div>
+  <div class="st">
+    <span class="l">Je voudrais me mettre en colère</span>
+    <span class="l">En colère hurlante, gesticulante</span>
+    <span class="l">Me mettre en colère comme les gens qui savent se</span>
+    <span class="l">Mettre en colère</span>
+  </div>
+  <div class="st">
+    <span class="l">En frappant</span>
+    <span class="l">Du poing sur les tables qu'ils cassent pour</span>
+    <span class="l">Obtenir ce qu'ils veulent</span>
+    <span class="l">Je voudrais me mettre en colère</span>
+    <span class="l">À cause de la douce petite Yasmina</span>
+    <span class="l">Qui n'a pas voulu</span>
+    <span class="l">Mourir et qui est morte</span>
+  </div>
+</div>
+<span class="pn">— 23 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.24–25 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">L'autre jour</span>
+    <span class="l">Rue Franklin-Roosevelt</span>
+  </div>
+  <div class="st">
+    <span class="l">Khouni Ahmed est un mendiant</span>
+    <span class="l">De 42 ans…</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais le ventre plein, les enfants de Charlemagne</span>
+    <span class="l">Chantent une chanson</span>
+    <span class="l">Une chanson qu'on apprend à l'école</span>
+    <span class="l i3 ref">Frère Jacques ! Frère Jacques !</span>
+    <span class="l i3 ref">Dormez-vous</span>
+    <span class="l i4 ref">Ding ! Dung ! Dong !</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Le froid est silencieux</span>
+    <span class="l i1">Le froid ne dit rien</span>
+    <span class="l i1">Il tue simplement</span>
+    <span class="l i1">Il tue les gens</span>
+    <span class="l i1">De mort naturelle</span>
+    <span class="l i1">Surtout le froid tue les pauvres gens, qui ont une</span>
+    <span class="l ir">paillasse</span>
+  </div>
+  <div class="st">
+    <span class="l">De carton pour dormir</span>
+    <span class="l">Et du papier d'emballage</span>
+    <span class="l">D'emballage</span>
+    <span class="l">D'emballage</span>
+    <span class="l">Pour se couvrir</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Quand il a de bon matin,</span>
+    <span class="l">Ce sacré courant d'air glacé</span>
+    <span class="l">Qui glace la pierre et l'emballage et l'emballé</span>
+  </div>
+</div>
+<span class="pn">— 24 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Et qui virevolte et batifole à travers</span>
+    <span class="l">Les arcades de la Rue de la Lyre,</span>
+    <span class="l">Charlemagne</span>
+    <span class="l">Et qui saute à pieds-joints</span>
+    <span class="l">Du dormeur mâle</span>
+    <span class="l">Au dormeur femelle</span>
+    <span class="l">Et du dormeur enfant</span>
+    <span class="l">Au dormeur vieillard</span>
+    <span class="l">Et du dormeur tuberculeux</span>
+    <span class="l">Au dormeur b.c.g..</span>
+    <span class="l">Et ainsi de suite</span>
+    <span class="l">Pendant 500 mètres de carton et de</span>
+    <span class="l">Papier d'emballage</span>
+    <span class="l">Et pendant ainsi 127 arcades</span>
+    <span class="l">Cadavérifiées</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Avant de mourir la petite</span>
+    <span class="l">Yasmina</span>
+    <span class="l i2">Dormait là</span>
+    <span class="l i2">Avec son petit papa</span>
+    <span class="l i2">Qui l'a assassinée</span>
+    <span class="l i2">Simplement</span>
+    <span class="l i2">Brusquement</span>
+    <span class="l i2">Avec ce geste paternel</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Et pas du tout méchant</span>
+    <span class="l">Du paysan laborieux</span>
+    <span class="l">Consciencieux, qui sème la petite graine de</span>
+    <span class="l">Neuf ans</span>
+  </div>
+</div>
+<span class="pn">— 25 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.26–27 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Dans le sillon</span>
+    <span class="l">Des pneus d'un gros camion qui passe</span>
+    <span class="l">Et qui repasse</span>
+  </div>
+  <div class="st">
+    <span class="l">Lorsque l'enfant paraît…</span>
+    <span class="l">Patati…</span>
+    <span class="l">Et lorsque l'enfant disparaît</span>
+    <span class="l">Patata…</span>
+  </div>
+  <div class="st">
+    <span class="l">Charlemagne,</span>
+    <span class="l">Tu ne sais pas.</span>
+    <span class="l">Combien, ça peut mettre</span>
+    <span class="l">En colère</span>
+    <span class="l">Ces tas de trucs qui font mal au cœur</span>
+    <span class="l">Et dont tout le monde</span>
+    <span class="l">Se fiche</span>
+    <span class="l">Ces asiles pour courants d'air</span>
+    <span class="l">Ces dortoirs pour souris</span>
+    <span class="l">Ces chienchiens aux mémères</span>
+    <span class="l">Et ces bisness is bisness.</span>
+  </div>
+  <div class="st">
+    <span class="l">Je me demande, moi</span>
+    <span class="l">À quoi ça sert</span>
+    <span class="l">Les barrages qui barrent</span>
+    <span class="l">Et les routes bien tracées</span>
+    <span class="l">Et les camions qui écrasent les petites</span>
+    <span class="l">Yasmina de neuf ans</span>
+    <span class="l">En roulant entre les estomacs à air comprimé</span>
+    <span class="l">Et les peaux en papier d'emballage.</span>
+  </div>
+</div>
+<span class="pn">— 26 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">J'étais là, quand le</span>
+    <span class="l">Camion l'a écrasée</span>
+    <span class="l">Et que le sang a giclé</span>
+  </div>
+  <div class="st">
+    <span class="l">Le sang.</span>
+  </div>
+  <div class="st">
+    <span class="l">Et alors là, je ne raconte pas…</span>
+  </div>
+  <div class="st">
+    <span class="l">Je laisse aux gens qui ont déjà vu un camion</span>
+    <span class="l">Ecraser un bonhomme et du sang</span>
+    <span class="l">Gicler</span>
+    <span class="l">Le privilège de se</span>
+    <span class="l">Rappeler</span>
+  </div>
+  <div class="st">
+    <span class="l">L'horreur</span>
+  </div>
+  <div class="st">
+    <span class="l">Et le dégoût et puis la fuite lâche</span>
+    <span class="l">Devant un cadavre</span>
+    <span class="l">Surtout devant le cadavre d'une</span>
+    <span class="l">Petite fille innocente</span>
+  </div>
+  <div class="st">
+    <span class="l">Et le privilège aussi</span>
+    <span class="l">Pour les Chrétiens le Vendredi Saint</span>
+    <span class="l">Pour les Musulmans le Ramadhan</span>
+    <span class="l">Pour les Juifs le Youm-Kippour</span>
+    <span class="l">Pour les Athées les jours de cloches sonnant à toute</span>
+    <span class="l">Volée dans la nef déserte d'un estomac affamé</span>
+    <span class="l">Pour les Chinois les jours de pleine lune et de</span>
+    <span class="l">Jiu-jitsu, hara-kiri.</span>
+  </div>
+</div>
+<span class="pn">— 27 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.28–29 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">De se rappeler leurs faims</span>
+    <span class="l">Et d'en assaisonner</span>
+    <span class="l">Ce cadavre de petite fille</span>
+  </div>
+  <div class="st">
+    <span class="l">Et le privilège aussi</span>
+    <span class="l">Pour la mission Paul Emile-Victor au Pôle</span>
+    <span class="l">Nord</span>
+    <span class="l">Pour les vainqueurs de l'Annapurna</span>
+    <span class="l">Qui ont eu les doigts d'abord gelés et puis</span>
+    <span class="l">coupés</span>
+    <span class="l">D'apporter de l'eau à mon moulin</span>
+    <span class="l">Et un peu de neige</span>
+    <span class="l">Pour conserver dans ma mémoire</span>
+    <span class="l">Et ma colère et mon dégoût</span>
+    <span class="l">Le cadavre</span>
+    <span class="l">De la petite Yasmina</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais le ventre plein et les pieds dans un chausson</span>
+    <span class="l">Les enfants de Charlemagne chantent une</span>
+    <span class="l">Chanson</span>
+    <span class="l">Une chanson qu'on apprend à l'école</span>
+    <span class="l i3 ref">Il court, il court le furet</span>
+    <span class="l i3 ref">Le furet des bois, mesdames.</span>
+  </div>
+  <div class="st">
+    <span class="l ir">etc.</span>
+  </div>
+</div>
+<span class="pn">— 28 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Il ne faut pas m'en vouloir</span>
+    <span class="l">Charlemagne</span>
+    <span class="l">Mais c'est trop injuste</span>
+    <span class="l">À la fin</span>
+    <span class="l">Que des gens crèvent</span>
+    <span class="l">Et que d'autres rigolent</span>
+    <span class="l">Qu'au bal des pompiers, ce soit toujours les mêmes</span>
+    <span class="l">Qui s'empiffrent au buffet</span>
+    <span class="l">Tu n'as rien vu</span>
+    <span class="l">Charlemagne</span>
+    <span class="l">Avec tes bons et tes mauvais élèves et tes truands et tes</span>
+    <span class="l">Gueux, et tes tire-laine et tes coupe-jarrets</span>
+    <span class="l">Paillards et pendards</span>
+    <span class="l">À la sauce Villon</span>
+    <span class="l">Tu n'as rien vu</span>
+    <span class="l">Et c'est pour cela que tu n'es pas en colère comme moi</span>
+    <span class="l">Ah ! Si je pouvais t'emmener</span>
+    <span class="l">Main dans la main</span>
+    <span class="l">À travers les cavernes, les asiles, les rues pourries, les</span>
+    <span class="l">Misères, les bidonvilles accrochés entre deux cimetières</span>
+    <span class="l">Les rues de la Lyre, les Pêcheries</span>
+    <span class="l">Les crève-la-faim, les crève-le-froid, les mères de famille</span>
+    <span class="l">Nombreuse prix cognac, mendiant avec des moutards</span>
+    <span class="l">Plein les bras et les pieds</span>
+    <span class="l">Et les vieillards qui gigotent entre leurs barbes et les</span>
+    <span class="l">Dockers qui couchent à leur mauvaise étoile et les</span>
+    <span class="l">Malades qui agonisent sous des porches et les tas de</span>
+    <span class="l">Pauvres types couchant l'un sur l'autre au-dessus d'un</span>
+    <span class="l">Soupirail de boulanger pour se réchauffer et humer</span>
+  </div>
+</div>
+<span class="pn">— 29 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.30–31 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">L'air du pain frais et les gourbis de feuilles mortes</span>
+    <span class="l">Qu'on ramasse à la pelle, à travers aussi les pierres</span>
+    <span class="l">Et les lézards et les gargottes et les pauvretés et les</span>
+    <span class="l">Dénuements</span>
+    <span class="l">Main dans la main</span>
+    <span class="l">Tout simplement</span>
+    <span class="l">Comme deux types anonymes</span>
+    <span class="l">D'une foule plus anonyme encore</span>
+    <span class="l">Cherchant un peu de bon-dieu</span>
+    <span class="l">Dans la bourse</span>
+    <span class="l">De ceux qui se réclament de la déclaration</span>
+    <span class="l">Des droits de l'homme</span>
+    <span class="l">De la femme, de l'enfant et du vieillard</span>
+    <span class="l">Et de l'orphelin</span>
+    <span class="l">Et de la petite Yasmina KHOUNI.</span>
+  </div>
+  <div class="st">
+    <span class="l">Un peuple de mendiants</span>
+    <span class="l">Voilà ce que c'est</span>
+    <span class="l">Charlemagne</span>
+  </div>
+  <div class="st">
+    <span class="l">C'est pour cela que j'ai beaucoup de peine</span>
+  </div>
+  <div class="st">
+    <span class="l">Ecrasée une fois</span>
+    <span class="l">Et puis écrasée une autre fois</span>
+    <span class="l">Sous les yeux du père</span>
+    <span class="l">Pater noster</span>
+    <span class="l">Qui poussait encore l'enfant</span>
+    <span class="l">Et la poussait encore</span>
+  </div>
+</div>
+<span class="pn">— 30 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Sous mes yeux</span>
+    <span class="l">Sous les yeux du chauffeur</span>
+    <span class="l">Sous les yeux du camion</span>
+    <span class="l">Sous les yeux des gens qui avaient peur, mais n'avaient</span>
+    <span class="l ir">pas faim</span>
+  </div>
+  <div class="st">
+    <span class="l">Sous les yeux du soleil qui brillait</span>
+    <span class="l">Sous les yeux de tous</span>
+    <span class="l">Sous tes yeux, Charlemagne</span>
+    <span class="l">Et tous ces yeux-là étaient bons à crever et à écraser</span>
+    <span class="l">Sous des roues de camion</span>
+    <span class="l">Parce qu'ils ne faisaient que</span>
+    <span class="l">Voir</span>
+    <span class="l">Comme des abrutis</span>
+    <span class="l">Comme des grenouilles</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais le ventre plein, les enfants de Charlemagne</span>
+    <span class="l">Chantent une chanson</span>
+    <span class="l">Une chanson qu'on apprend à l'école</span>
+    <span class="l i3 ref">Une fleur au chapeau</span>
+    <span class="l i3 ref">À la bouche une chanson</span>
+    <span class="l i3 ref">Un cœur joyeux et sincère</span>
+    <span class="l i3 ref">Et c'est tout ce qu'il faut</span>
+    <span class="l ir">etc.</span>
+  </div>
+  <div class="st">
+    <span class="l">Ah !</span>
+  </div>
+</div>
+<span class="pn">— 31 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.32–33 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Il faut les voir le Vendredi en file</span>
+    <span class="l">Indienne</span>
+    <span class="l i2">En file</span>
+    <span class="l i4">par quatre</span>
+    <span class="l">Dans les rues et dans les maisons ? ramasser à la queue</span>
+    <span class="l ir">leu-leu</span>
+    <span class="l i1">Les pépites</span>
+    <span class="l i1">De leur misère dans la boue des</span>
+    <span class="l i1">Consciences</span>
+    <span class="l i1">Piocher dans le bronze des cœurs un</span>
+    <span class="l i1">Peu</span>
+    <span class="l i1">De cette poussière de métal dont ils tapissent la peau</span>
+    <span class="l i1">Estomacs</span>
+    <span class="l ir">de leurs</span>
+    <span class="l i1">Pour les faims futures</span>
+    <span class="l i1">Les mendicités se cultivent au</span>
+    <span class="l i1">Fumier du Veau d'or</span>
+    <span class="l i1">Et</span>
+    <span class="l i1">Se</span>
+    <span class="l i1">La-</span>
+    <span class="l i1">Bou-</span>
+    <span class="l i1">Rent</span>
+    <span class="l i1">Au soc de l'indifférence.</span>
+    <span class="l i1">Ah ! gens d'enfer et de potence et du Vendredi</span>
+    <span class="l i1">Que vous achetez au bazar</span>
+    <span class="l i1">Du Bon Dieu</span>
+    <span class="l i1">Et du remords reconnaissant</span>
+    <span class="l i1">Huile d'olive laissée pour compte que vous videz goutte</span>
+    <span class="l i1">À goutte</span>
+  </div>
+</div>
+<span class="pn">— 32 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Sur les boulons de votre mécanique à produire de la</span>
+    <span class="l ir">simili-pitié</span>
+    <span class="l">Goutte</span>
+    <span class="l">À</span>
+    <span class="l">Goutte</span>
+    <span class="l">Larme à</span>
+    <span class="l">Larme que vous repompez dans les sébilles</span>
+    <span class="l">Des pauvres et les tirelires des petits enfants que vous</span>
+    <span class="l ir">écrasez</span>
+    <span class="l">Du gros rire de vos</span>
+    <span class="l">Camions</span>
+  </div>
+  <div class="st">
+    <span class="l">Ah ! Hyènes et chacals</span>
+    <span class="l">Il vous faut un jour à l'eau bénite</span>
+    <span class="l i1">Dans une semaine</span>
+    <span class="l">Païenne</span>
+    <span class="l">Pour laver les guenilles et raccommoder les hardes de votre</span>
+    <span class="l">FRATERNITÉ</span>
+    <span class="l">Un jour</span>
+    <span class="l i2">Clair</span>
+    <span class="l">Pour la promenade de vos bons sentiments</span>
+    <span class="l">Condamnés</span>
+    <span class="l">À la réclusion perpétuelle dans les cachots de vos bêtises et</span>
+    <span class="l ir">de vos</span>
+    <span class="l">Égoïsmes.</span>
+    <span class="l">Je vous insulte</span>
+    <span class="l">Hyènes et chacals</span>
+    <span class="l">Quand passe à portée de ma voix la fenêtre</span>
+    <span class="l">Par laquelle</span>
+  </div>
+</div>
+<span class="pn">— 33 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.34–35 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Vous jetez votre argent aux troubadours de vos</span>
+    <span class="l">Plaisirs</span>
+    <span class="l">En</span>
+    <span class="l">Piétinant les petits chanteurs sans voix</span>
+    <span class="l">De la charité de la jambe</span>
+    <span class="l i3">de bois sculpté</span>
+    <span class="l i4">dans l'arbre de la</span>
+    <span class="l">Stupidité</span>
+    <span class="l">Je vous insulte</span>
+    <span class="l">Braves gens</span>
+    <span class="l i3">repus</span>
+    <span class="l i4">cossus</span>
+    <span class="l">À tous les modes et tous les temps</span>
+    <span class="l">Pour vos largesses de dindons carrossant sur la roue</span>
+    <span class="l">Et votre petitesse</span>
+    <span class="l">De passants à la besace pleine et cadenassée par le</span>
+    <span class="l">Fil de chanvre</span>
+    <span class="l">Sale</span>
+    <span class="l">Des harpagons de la cité</span>
+  </div>
+  <div class="st">
+    <span class="l">Je vous insulte</span>
+    <span class="l">Hyènes et chacals pour ce jour propre</span>
+    <span class="l">Au milieu de tous les jours</span>
+    <span class="l">Sales.</span>
+  </div>
+  <div class="st">
+    <span class="l">Je vous insulte</span>
+    <span class="l">Hyènes et chacals</span>
+    <span class="l">Au nom de la Semaine de bonté</span>
+  </div>
+</div>
+<span class="pn">— 34 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Je vous insulte</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Hyènes et chacals</span>
+    <span class="l i3">Avec toutes les injures de mon</span>
+    <span class="l">Alphabe:</span>
+    <span class="l i3">Et je vous jette au crâne</span>
+    <span class="l i4">toutes les potiches de mon</span>
+    <span class="l ir">impuissance</span>
+    <span class="l">Hyènes et chacals</span>
+    <span class="l i3">Car</span>
+    <span class="l i2">Vous meublez le long tunnel de votre ennui</span>
+    <span class="l i3">Des dimanches et des jours creux</span>
+    <span class="l i3">Avec le casse-croûte des faibles</span>
+    <span class="l i3">Et vous en tapissez les murs avec la chair</span>
+    <span class="l i3">De poule des gens qui dorment dans les</span>
+    <span class="l i4">Igloos des nuits d'octobre</span>
+  </div>
+</div>
+<span class="pn">— 35 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.36–37 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Parlez-moi</span>
+    <span class="l">De plaisirs quand des gens criant famine et</span>
+    <span class="l">Désolation</span>
+    <span class="l">Mettent en marche le phonographe de leurs plaintes</span>
+    <span class="l">Et battent</span>
+    <span class="l">Les tambours de leur misère</span>
+    <span class="l">Sur une place publique</span>
+    <span class="l">Où,</span>
+    <span class="l">Personne</span>
+    <span class="l">Ne s'arrête</span>
+    <span class="l">Rien ne compte plus</span>
+    <span class="l">Que ce vide des ventres</span>
+    <span class="l i4">À combler qui résonne comme une orgue</span>
+    <span class="l">Dans les crânes des abrutis satisfaits</span>
+    <span class="l">Comment pouvez-vous vivre, gens d'argent et de caviar</span>
+    <span class="l ir">avec ces poux</span>
+    <span class="l">Que vous ne grattez pas ?</span>
+    <span class="l">Comment pouvez-vous avaler la pâtée</span>
+    <span class="l">Gens de cravates et de parfums que les cravates</span>
+    <span class="l">N'étranglent</span>
+    <span class="l">Pas et que le parfum</span>
+    <span class="l">N'étouffe</span>
+    <span class="l">Pas ?</span>
+    <span class="l">Comment pouvez-vous caresser vos femmes, lisser votre</span>
+    <span class="l ir">moustache,</span>
+    <span class="l">Hausser les épaules, acheter un timbre, applaudir le Cid au</span>
+    <span class="l ir">théâtre</span>
+  </div>
+</div>
+<span class="pn">— 36 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Des vies, distiller l'anis de vos satisfactions dans l'alambic</span>
+    <span class="l ir">de vos</span>
+    <span class="l">Gosiers de pierre, marcher les pieds au sec et la tête dans</span>
+    <span class="l ir">un chapeau</span>
+    <span class="l">Curer les ongles de vos chiens, avoir des enfants,</span>
+    <span class="l ir">tambouriner</span>
+    <span class="l">Des doigts sans honte, aller la tête haute et le cœur lourd,</span>
+    <span class="l ir">rire du rire</span>
+    <span class="l">Faux</span>
+    <span class="l">Des gens sans conscience, mâcher le chewing-gum des ânes</span>
+    <span class="l ir">désabusés,</span>
+    <span class="l">Décortiquer la croûte</span>
+    <span class="l">D'un poème</span>
+    <span class="l">Ou la coque d'une chanson pour en avaler sinistrement le</span>
+    <span class="l ir">fruit</span>
+    <span class="l">Se dire comblé</span>
+    <span class="l i2">Se dire ravi</span>
+    <span class="l i3">Se dire heureux</span>
+    <span class="l i3">Se dire bon</span>
+    <span class="l i4">Se dire humain</span>
+  </div>
+  <div class="st">
+    <span class="l">Quand les saltimbanques de la misère</span>
+    <span class="l">Chantent</span>
+    <span class="l">Et dansent</span>
+    <span class="l">Le ballet des petits pains devant des banquettes vides</span>
+    <span class="l">Quand les clowns</span>
+    <span class="l i2">poussifs</span>
+    <span class="l i3">Époumonés</span>
+    <span class="l i3">Tuberculeux</span>
+  </div>
+</div>
+<span class="pn">— 37 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.38–39 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l i1">De la charité</span>
+    <span class="l i1">Soufflent dans le tube de leur intestin grêle</span>
+    <span class="l i1">Pour bien vous montrer qu'il est</span>
+    <span class="l i1">Vide</span>
+  </div>
+  <div class="st">
+    <span class="l i1">Je vous insulte</span>
+    <span class="l i1">Hyènes et chacals</span>
+    <span class="l i1">Allez-vous faire pendre</span>
+    <span class="l i2">À la poutre</span>
+    <span class="l i1">De la Vanitas-Vanitatis</span>
+    <span class="l i1">Avec votre littérature de bonshommes</span>
+    <span class="l i1">Rassasiés</span>
+    <span class="l i1">Avec votre éloquence au cou</span>
+    <span class="l i1">Tordu</span>
+    <span class="l i1">Avec vos Roberto Benzi et vos Paganini</span>
+    <span class="l i1">Qui n'ont pas besoin de ronger le bois de leur violon</span>
+    <span class="l i1">Pour déjeuner</span>
+    <span class="l i1">Ni besoin de leur archet pour se gargariser le</span>
+    <span class="l i1">Gosier</span>
+    <span class="l i1">Allez-vous faire pendre à la potence de l'Inutilité</span>
+    <span class="l i1">Avec vos tableaux</span>
+    <span class="l i3">Vos bijoux</span>
+    <span class="l i3">Vos bibelots</span>
+    <span class="l i3">Vos Aristote et vos Goya</span>
+    <span class="l i3">Vos whisky à gogo et vos Peter</span>
+    <span class="l i3">Cheney</span>
+    <span class="l i3">Vos docteurs Petiot</span>
+    <span class="l i3">Vos « voui ma chère »</span>
+    <span class="l i3">Et vos taratata</span>
+  </div>
+</div>
+<span class="pn">— 38 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">La Pendaison voilà</span>
+    <span class="l">Charlemagne</span>
+    <span class="l i2">Manger</span>
+    <span class="l i3">Manger</span>
+    <span class="l i3">À manger</span>
+    <span class="l i3">À manger pour les Yasmina qui ne</span>
+    <span class="l">Sont pas encore</span>
+    <span class="l i2">Dans la tombe</span>
+    <span class="l">Manger bassement</span>
+    <span class="l">Et moudre</span>
+    <span class="l i2">Dans un bruit de salives et de mâchoires</span>
+    <span class="l">Satisfaites</span>
+    <span class="l">Du pain et de la viande</span>
+    <span class="l">Et les avaler et les sentir passer dans</span>
+    <span class="l">L'œsophage</span>
+    <span class="l">Et les deviner</span>
+    <span class="l">Apaisant la complainte des estomacs qui ont</span>
+    <span class="l">Faim</span>
+    <span class="l">Et des chairs qui ont froid</span>
+    <span class="l">Manger</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Hyènes et chacals</span>
+  </div>
+  <div class="st">
+    <span class="l i3">Mais les enfants de Charlemagne le</span>
+    <span class="l ir">ventre plein</span>
+    <span class="l">Chantent une chanson</span>
+    <span class="l">Une chanson qu'on apprend à l'école</span>
+    <span class="l i3 ref">Sur le pont d'Avignon,</span>
+  </div>
+</div>
+<span class="pn">— 39 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.40–41 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l i3 ref">On y danse, on y danse</span>
+    <span class="l i3 ref">Sur le pont d'Avignon</span>
+    <span class="l i3 ref">On y danse tous en rond.</span>
+  </div>
+  <div class="st">
+    <span class="l">J'ai vu</span>
+    <span class="l">Du sang dégouliner</span>
+    <span class="l">Et des gens courir, et des gens affolés, et des gens apeurés</span>
+    <span class="l">Et des gens courageux et des gens badauds et des gens</span>
+    <span class="l ir">pressés</span>
+    <span class="l">Et dans tous ces gens</span>
+    <span class="l i1">Un gardien</span>
+    <span class="l i3">De</span>
+    <span class="l i4">La</span>
+    <span class="l i4">Paix</span>
+    <span class="l">Avec un carnet</span>
+    <span class="l">Et avec un crayon</span>
+  </div>
+  <div class="st">
+    <span class="l ir">Et je me suis sauvé…</span>
+  </div>
+  <div class="st">
+    <span class="l">C'était quelque chose comme le</span>
+    <span class="l">20 OCTOBRE 1949</span>
+    <span class="l">À quatorze heures dira le journal</span>
+  </div>
+  <div class="st">
+    <span class="l i2">Je me suis sauvé dans les ruelles</span>
+    <span class="l">De ma Casbah</span>
+    <span class="l">Tirant</span>
+    <span class="l">Par la main le corps de la petite Yasmina</span>
+    <span class="l ir">Assassinée</span>
+    <span class="l">Pendant qu'on enfermait son petit</span>
+    <span class="l">Père assassin</span>
+  </div>
+</div>
+<span class="pn">— 40 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Dans une prison de Barberousse</span>
+    <span class="l">Et pendant aussi qu'on</span>
+    <span class="l i3">reconstituait son</span>
+    <span class="l">Assassinat</span>
+    <span class="l">Publiquement</span>
+    <span class="l">Avec une poupée de chiffons</span>
+  </div>
+  <div class="st">
+    <span class="l">Dans les ruelles de la Casbah avec sa main d'assassinée</span>
+    <span class="l i2">Et nous avons marché</span>
+    <span class="l">Tous les jours et toutes les nuits</span>
+    <span class="l">Frôlant la grande muraille de la civilisation</span>
+    <span class="l">Les pieds en sang</span>
+    <span class="l">Le ventre vide</span>
+    <span class="l">Et la tête lourde du</span>
+    <span class="l">Sang</span>
+    <span class="l">Des suppliciés et nous avons hurlé avec sa main</span>
+    <span class="l ir">d'assassinée</span>
+  </div>
+  <div class="st">
+    <span class="l">La Charité et la Pitié Messieurs</span>
+    <span class="l">Dames</span>
+    <span class="l i2">La Charité</span>
+    <span class="l i3">La Charité</span>
+    <span class="l">Pour nous qui sommes aussi les enfants</span>
+    <span class="l">Du Bon Dieu</span>
+    <span class="l">Et des canards sauvages</span>
+  </div>
+  <div class="st">
+    <span class="l">Avec sa main et avec ma voix nous avons gratté</span>
+    <span class="l">Le mur de cette grande muraille</span>
+    <span class="l">Et nous y avons écrasé</span>
+  </div>
+</div>
+<span class="pn">— 41 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.42–43 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Les poux</span>
+    <span class="l">De notre corps et la crasse de notre peau</span>
+    <span class="l">Et nous avons côtoyé tous nos frères qui mendiaient</span>
+    <span class="l">Et nous avons frôlé leurs poux</span>
+    <span class="l i2">dans</span>
+    <span class="l">L'asile de Nuit du Marché Randon</span>
+    <span class="l">Et dans l'asile des jours des rues du monde entier</span>
+    <span class="l i2">Nous avons tendu les os durs</span>
+    <span class="l i3">de la main dure</span>
+  </div>
+  <div class="st">
+    <span class="l">De la petite</span>
+    <span class="l">Vieille aveugle</span>
+    <span class="l i2">voilée</span>
+    <span class="l">Qui vend des boîtes d'allumettes</span>
+    <span class="l">Dans la voûte sombre</span>
+    <span class="l">De la rue Porte-Neuve</span>
+    <span class="l">Les os durs de la main du petit aveugle de la station de</span>
+    <span class="l ir">trolley</span>
+  </div>
+  <div class="st">
+    <span class="l">Du marché de la Lyre</span>
+    <span class="l">Les os durs de la main du gros Smina aveugle qui chante</span>
+    <span class="l">En battant sur une boîte d'allumettes</span>
+    <span class="l">La cadence de toute sa graisse</span>
+    <span class="l">Affamée</span>
+    <span class="l">Les os durs de la main</span>
+    <span class="l">Du type tordu</span>
+    <span class="l i3">accroupi sur</span>
+    <span class="l">Sa colonne vertébrale démantelée</span>
+    <span class="l">Le long des murs froids des arcades de la Rue Bab Azoun</span>
+    <span class="l">Les os de la main</span>
+  </div>
+</div>
+<span class="pn">— 42 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Du Cul de jatte</span>
+    <span class="l i2">Au derrière en caoutchouc</span>
+    <span class="l">Rouge</span>
+    <span class="l">De la Rue Bab-el-Oued</span>
+  </div>
+  <div class="st">
+    <span class="l">Et les os durs de la main</span>
+    <span class="l i2">De tous les déchiqueteurs de conscience des rues</span>
+    <span class="l">De ma bonne ville</span>
+    <span class="l">D'Alger.</span>
+    <span class="l">Un par un</span>
+    <span class="l">Deux par deux</span>
+    <span class="l">Trois par trois</span>
+    <span class="l">Tas par tas</span>
+    <span class="l">Horde par horde</span>
+    <span class="l i2">Main tendue</span>
+  </div>
+  <div class="st">
+    <span class="l i2">Assis</span>
+    <span class="l i3">Couchés</span>
+    <span class="l i3">Désespérés</span>
+    <span class="l i3">Confiants</span>
+    <span class="l i3">Blagueurs</span>
+    <span class="l i3">Fous</span>
+    <span class="l i4">Demi-fous</span>
+  </div>
+  <div class="st">
+    <span class="l">Pâles, noirs, hilares, tristes.</span>
+    <span class="l i2">Sombres,</span>
+    <span class="l i3">résignés.</span>
+  </div>
+  <div class="st">
+    <span class="l">Il faut les voir</span>
+  </div>
+</div>
+<span class="pn">— 43 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.44–45 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l i3">Les jours de pluie et de froid</span>
+    <span class="l">Rassemblés autour de la maigre chaleur du soupirail</span>
+    <span class="l">Des Boulangers</span>
+    <span class="l">Humant leur faim et la bonne odeur du pain qui cuit</span>
+    <span class="l">De la farine qui se malaxe</span>
+    <span class="l">Et du bois qui grésille…</span>
+    <span class="l">Là qu'ils sont !… silencieux, les yeux ronds</span>
+    <span class="l i2">La bouche ouverte</span>
+  </div>
+  <div class="st">
+    <span class="l">Sans voix</span>
+    <span class="l">Sans colère</span>
+    <span class="l">Sans pourquoi ?</span>
+    <span class="l">Sans comment ?</span>
+    <span class="l">Sans crier « Holà ! c'est du scandale »</span>
+    <span class="l">Sans se lever</span>
+    <span class="l i2">En état de légitime défense</span>
+    <span class="l">Qu'ils sont devant l'agression du pain qui cuit…</span>
+    <span class="l ir">…pour les autres</span>
+    <span class="l">Pour ces autres qui n'en ont pas BESOIN…</span>
+  </div>
+  <div class="st">
+    <span class="l">Cependant que</span>
+    <span class="l">Tous les jours interminablement</span>
+    <span class="l">Dans le silence</span>
+    <span class="l">Entre quatre murs, une porte et trois barreaux</span>
+    <span class="l">Sur une paillasse</span>
+    <span class="l">Un tueur sale triste et muet</span>
+    <span class="l">Dans l'ombre</span>
+    <span class="l">Dort</span>
+    <span class="l i2">Déjeune</span>
+  </div>
+</div>
+<span class="pn">— 44 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l i2">Dort</span>
+    <span class="l i2">Dîne</span>
+    <span class="l i3">Et dort</span>
+    <span class="l">Tous les jours interminablement</span>
+  </div>
+  <div class="st">
+    <span class="l">Mais le ventre plein, les enfants de Charlemagne</span>
+    <span class="l">Chantent une chanson</span>
+    <span class="l">Une chanson qu'on apprend à l'école</span>
+    <span class="l i3 ref">« Savez-vous planter les choux</span>
+    <span class="l i3 ref">À la mode, à la mode</span>
+    <span class="l i3 ref">Savez-vous planter les choux</span>
+    <span class="l i3 ref">À la mode de chez nous… »</span>
+  </div>
+  <div class="st">
+    <span class="l">Tous les jours interminablement</span>
+    <span class="l">Jusqu'au matin du</span>
+    <span class="l i2">30 octobre 1951</span>
+    <span class="l">Où des juges en robe</span>
+    <span class="l">Se sont frottés les mains</span>
+    <span class="l">Où des jurés se sont tapés</span>
+    <span class="l i3">Sur les cuisses</span>
+    <span class="l">Où des avocats</span>
+    <span class="l i3">Bedonnants</span>
+    <span class="l">En se trémoussant</span>
+    <span class="l">Ont crié aux circonstances atténuantes</span>
+    <span class="l">Où des publics rigolos ont fait des mouvements</span>
+    <span class="l">Divers</span>
+    <span class="l">Pour permettre</span>
+    <span class="l">À un J.P. de chiens écrasés</span>
+  </div>
+</div>
+<span class="pn">— 45 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.46–47 (trial article) ══════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem" style="font-size:0.82rem">
+  <div class="st">
+    <span class="l">D'écrire les âneries — qui suivent <em>in extenso</em> et</span>
+    <span class="l ir">Bla-bla-bla :</span>
+  </div>
+  <div class="news">
+    <div class="news-h">« Khouni, assassin de sa fille<br>est sauvé par le médecin psychiatre »</div>
+    <p>« La nouvelle session de la Cour d'Assises s'est ouverte hier matin, sous la présidence de M. le Conseiller, assisté de M. le Conseiller et de M. le Juge M. Au siège du ministère public, M. l'Avocat Général B.</p>
+    <p>« Au banc des Accusés, Khouni Ahmed, un parricide *. Véritable loque humaine, tassée, pâle et maigre, secoué de quintes de toux, cet assassin de 42 ans, en paraît 70 et provoque tout de même un peu de pitié ; surtout quand on apprend qu'au point de vue mental, il ne vaut guère mieux…</p>
+    <p>« Jusqu'au 20 octobre 1949, Khouni était mendiant. Sa fille, la petite Yasmina, âgée de 9 ans, l'aidait dans cette délicate occupation. Plus de femme, elle est partie et la police même, n'a pu la retrouver. Plus de parents, plus personne.</p>
+    <p>« La misère intégrale : le jour qu'il est arrêté, Khouni et sa fille n'ont pas mangé un morceau de pain et possèdent une pièce de 5 francs…</p>
+    <p>« Khouni descend la rue Franklin-Roosevelt. Il est 14 heures. Un lourd camion monte lentement et traînant une remorque. Khouni se penche tout à coup et pousse Yasmina. La petite fille roule entre le trottoir et les roues. Le père la saisit à nouveau aux aisselles, court après le camion et pousse encore la fillette sous les roues… »</p>
+    <div class="ref">* J.P. « infanticide » magistralement son poulet (<em>Journal d'Alger, 30 octobre 1951</em>).</div>
+  </div>
+</div>
+<span class="pn">— 46 —</span>
+</div>
+<div class="pr">
+<div class="poem" style="font-size:0.82rem">
+  <div class="news" style="margin-bottom:1.2em">
+    <p>Il la maintient même car la petite crie et veut s'échapper. Elle a le bassin atrocement délabré et meurt à l'hôpital quelques instants après, non sans avoir tout de même accusé nettement son père.</p>
+    <p>« Khouni est caractérisé par une débilité mentale de la place d'emblée parmi les neurasthéniques et les mélancoliques graves. Sa responsabilité est très atténuée. Dès qu'il a été en prison et qu'il a eu un traitement matériel tout de même supérieur à celui qu'il avait eu en liberté, Khouni se reprend : il nie contre toute évidence. Réflexe de défense instinctive qui caractérise les neurasthéniques après la crise…</p>
+    <p>« M. l'avocat général B. fait un réquisitoire très modéré et Me N. avec tact, intelligence et sensibilité, laisse parler les faits. Cela suffit aux jurés : ce dément est acquitté. Il ira prendre la place qui lui revient d'office à l'hôpital de Joinville.</p>
+    <p style="font-style:normal">J.P. »</p>
+  </div>
+  <div class="poem" style="font-size:0.84rem">
+    <div class="st">
+      <span class="l">Ce n'est pas comme cela que</span>
+      <span class="l">J'aurai voulu te voir finir, Khouni, dans un asile de fous</span>
+    </div>
+    <div class="st">
+      <span class="l">Dégradé par un médecin psychiatre</span>
+      <span class="l">Dégradé dans ta punition</span>
+      <span class="l">Dégradé dans ta liberté</span>
+      <span class="l">Dégradé dans ton acte de tueur</span>
+      <span class="l">Qui tue de sang-froid</span>
+      <span class="l">Une petite fille</span>
+      <span class="l">Pour des prunes, pour des noix</span>
+      <span class="l">Pour des cacahuètes</span>
+      <span class="l">Te voir déclarer, en tremblant et</span>
+      <span class="l">En pleurant</span>
+      <span class="l">Que c'est toi le tueur</span>
+      <span class="l">Sans irresponsabilité mentale</span>
+    </div>
+  </div>
+</div>
+<span class="pn">— 47 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.48–49 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Forcer l'horreur</span>
+    <span class="l i2">Forcer le crime</span>
+    <span class="l i3">Forcer l'Absurde</span>
+  </div>
+  <div class="st">
+    <span class="l">Contraindre l'Absurde</span>
+    <span class="l">Soumettre l'Absurde jusqu'à l'urine de la peur</span>
+    <span class="l">Forcer la liberté</span>
+    <span class="l">Ta liberté</span>
+    <span class="l">Sans asile de fous</span>
+  </div>
+</div>
+<span class="pn">— 48 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">Où l'on mange bien, où l'on dort bien, où l'ont boit bien</span>
+  </div>
+  <div class="st">
+    <span class="l">Où l'on n'est plus</span>
+    <span class="l">Qu'un fou</span>
+    <span class="l">Qui ne mendie pas et qui ne tue pas avec</span>
+    <span class="l">Cette absurde liberté</span>
+    <span class="l">Liberté absurde et consciente de sa</span>
+    <span class="l">RESPONSABILITÉ</span>
+  </div>
+  <div class="st">
+    <span class="l">Khouni Ahmed</span>
+    <span class="l">Couard — poltron excusable face à la guillotine</span>
+    <span class="l">Guillotine des hommes qui font</span>
+    <span class="l">La Justice et le Droit</span>
+    <span class="l">Idiot</span>
+    <span class="l">Parce que ces hommes et cette guillotine</span>
+    <span class="l">Endossent tout</span>
+    <span class="l">Et ta responsabilité et ton</span>
+    <span class="l">Irresponsabilité</span>
+    <span class="l">Et votre absurdité à tous…</span>
+  </div>
+  <div class="st">
+    <span class="l">Avec le sang de ta fille</span>
+    <span class="l">Tu as acheté</span>
+    <span class="l i3">pour la vie</span>
+    <span class="l">La soupe des accusés</span>
+    <span class="l i2">Et le pain des condamnés</span>
+    <span class="l">Dans la prison chaude</span>
+    <span class="l">De ta conscience</span>
+    <span class="l">Étouffée</span>
+    <span class="l">À présent que te voilà fou</span>
+  </div>
+</div>
+<span class="pn">— 49 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: pp.50–51 ══════════════════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l">Ils se sont chargés de ta lourde irresponsabilité</span>
+    <span class="l">Mentale</span>
+    <span class="l">Et ce n'est plus leur faute</span>
+    <span class="l">Et ce n'est plus ta faute</span>
+    <span class="l">Et ce n'est plus la faute de la petite Yasmina</span>
+    <span class="l">Et ce n'est même plus la faute</span>
+    <span class="l">De cette formidable absurdité qui se</span>
+    <span class="l">tord de rire !…</span>
+  </div>
+  <div class="st">
+    <span class="l">Dors fragile Yasmina</span>
+    <span class="l">Au fond du trou qu'a creusé pour toi</span>
+    <span class="l">Le fossoyeur</span>
+    <span class="l">Dans la terre du cimetière des petites mendiantes</span>
+    <span class="l">de neuf ans</span>
+    <span class="l">Dors</span>
+    <span class="l">Depuis un an les vers ont dû se repaître</span>
+    <span class="l">De ton corps écrasé</span>
+    <span class="l i2">De ton corps délabré</span>
+    <span class="l">Il ne doit plus rester</span>
+    <span class="l">grand chose</span>
+    <span class="l">Même pas quelques os</span>
+    <span class="l">Car on sait que les os des</span>
+    <span class="l">squelettes</span>
+    <span class="l">Des petits enfants</span>
+    <span class="l">Sont tendres</span>
+    <span class="l">Et cartilagineux</span>
+    <span class="l">Dors</span>
+    <span class="l">On ne peut rien pour toi,</span>
+    <span class="l">rien</span>
+  </div>
+</div>
+<span class="pn">— 50 —</span>
+</div>
+<div class="pr">
+<div class="poem">
+  <div class="st">
+    <span class="l">D'autre</span>
+    <span class="l">Qu'écrire un poème triste</span>
+    <span class="l">et long</span>
+    <span class="l">Depuis un an</span>
+    <span class="l">L'herbe a dû pousser sur</span>
+    <span class="l">ta tombe</span>
+    <span class="l">Personne ne vient</span>
+    <span class="l">T'y voir</span>
+    <span class="l">Pour y piquer une fleur</span>
+    <span class="l">Car on ne vient pas voir</span>
+    <span class="l">Les petites mendiantes</span>
+    <span class="l">Seules</span>
+    <span class="l">Écrasées par de gros camions qui roulent</span>
+    <span class="l">Sur les routes droites</span>
+    <span class="l">Et grises</span>
+  </div>
+  <div class="st">
+    <span class="l">Il n'y a pas de pitié pour les canards boiteux</span>
+    <span class="l">Dans l'immense basse-cour</span>
+    <span class="l">De leurs appétits de</span>
+    <span class="l i3">FAUVES…</span>
+  </div>
+  <div class="st">
+    <span class="l">Dans le marbre de ma colère rentrée</span>
+    <span class="l">Laisse-moi gratter</span>
+    <span class="l">Inlassablement</span>
+    <span class="l">Les lettres creuses de ton épitaphe</span>
+  </div>
+  <div class="st">
+    <span class="l i3">« Dors, dors dors tranquillement</span>
+    <span class="l i3">Les carottes sont cuites</span>
+    <span class="l i3">Alea jacta est</span>
+  </div>
+</div>
+<span class="pn">— 51 —</span>
+</div>
+</div>
+
+<!-- ══ SPREAD: p.52 — FINAL + BLANK ══════════════════════════ -->
+<div class="spread">
+<div class="pv">
+<div class="poem">
+  <div class="st">
+    <span class="l i3">Ramasse les billes, tu as gagné</span>
+    <span class="l i4">Amen »</span>
+    <span class="l">Et les enfants de Charlemagne</span>
+    <span class="l">Devenus grands, beaux et forts</span>
+  </div>
+  <div class="st" style="margin-top:1.5em">
+    <span class="l">Sifflent cette fois, entre leurs dents</span>
+    <span class="l">La chanson qu'on apprend à l'école</span>
+    <span class="l i3 ref">« Un macchabée c'est bien triste…</span>
+    <span class="l i3 ref">Deux macchabées c'est bien plus triste</span>
+    <span class="l i4 ref">encore »</span>
+  </div>
+  <div class="coloph" style="margin-top:3em;text-align:left;padding-left:3em">
+    Alger, Octobre 1951.
+  </div>
+</div>
+</div>
+<div class="pb"></div>
+</div>
+
+</body>
+</html>
